@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  model_no: MyString
+  capacity: MyString
+  cells_no: 1
+  banks_no: 1
+  installed_date: 2011-02-25
+  installation_team: MyString
+  comment: MyText
+
+two:
+  model_no: MyString
+  capacity: MyString
+  cells_no: 1
+  banks_no: 1
+  installed_date: 2011-02-25
+  installation_team: MyString
+  comment: MyText

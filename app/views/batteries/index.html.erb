@@ -1,0 +1,35 @@
+<h1>Listing batteries</h1>
+
+<table>
+  <tr>
+    <th>Model no</th>
+    <th>Capacity</th>
+    <th>Cells no</th>
+    <th>Banks no</th>
+    <th>Installed date</th>
+    <th>Installation team</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @batteries.each do |battery| %>
+  <tr>
+    <td><%= battery.model_no %></td>
+    <td><%= battery.capacity %></td>
+    <td><%= battery.cells_no %></td>
+    <td><%= battery.banks_no %></td>
+    <td><%= battery.installed_date %></td>
+    <td><%= battery.installation_team %></td>
+    <td><%= battery.comment %></td>
+    <td><%= link_to 'Show', battery %></td>
+    <td><%= link_to 'Edit', edit_battery_path(battery) %></td>
+    <td><%= link_to 'Destroy', battery, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Battery', new_battery_path %>

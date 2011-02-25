@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Model no:</b>
+  <%= @rectifier.model_no %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @rectifier.capacity %>
+</p>
+
+<p>
+  <b>Modules no:</b>
+  <%= @rectifier.modules_no %>
+</p>
+
+<p>
+  <b>Module capacity:</b>
+  <%= @rectifier.module_capacity %>
+</p>
+
+<p>
+  <b>Installed date:</b>
+  <%= @rectifier.installed_date %>
+</p>
+
+<p>
+  <b>Installation team:</b>
+  <%= @rectifier.installation_team %>
+</p>
+
+<p>
+  <b>Input ac voltage:</b>
+  <%= @rectifier.input_ac_voltage %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @rectifier.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_rectifier_path(@rectifier) %> |
+<%= link_to 'Back', rectifiers_path %>

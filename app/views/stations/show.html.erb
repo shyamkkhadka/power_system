@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @station.name %>
+</p>
+
+<p>
+  <b>Zone:</b>
+  <%= @station.zone %>
+</p>
+
+<p>
+  <b>District:</b>
+  <%= @station.district %>
+</p>
+
+<p>
+  <b>Account office:</b>
+  <%= @station.account_office %>
+</p>
+
+<p>
+  <b>Maintenance office:</b>
+  <%= @station.maintenance_office %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @station.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>

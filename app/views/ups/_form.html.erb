@@ -1,0 +1,41 @@
+<%= form_for(@up) do |f| %>
+  <% if @up.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@up.errors.count, "error") %> prohibited this up from being saved:</h2>
+
+      <ul>
+      <% @up.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :model_no %><br />
+    <%= f.text_field :model_no %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br />
+    <%= f.text_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :installed_date %><br />
+    <%= f.date_select :installed_date %>
+  </div>
+  <div class="field">
+    <%= f.label :installation_team %><br />
+    <%= f.text_field :installation_team %>
+  </div>
+  <div class="field">
+    <%= f.label :input_ac_voltage %><br />
+    <%= f.text_field :input_ac_voltage %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

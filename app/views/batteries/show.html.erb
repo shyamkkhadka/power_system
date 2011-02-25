@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Model no:</b>
+  <%= @battery.model_no %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @battery.capacity %>
+</p>
+
+<p>
+  <b>Cells no:</b>
+  <%= @battery.cells_no %>
+</p>
+
+<p>
+  <b>Banks no:</b>
+  <%= @battery.banks_no %>
+</p>
+
+<p>
+  <b>Installed date:</b>
+  <%= @battery.installed_date %>
+</p>
+
+<p>
+  <b>Installation team:</b>
+  <%= @battery.installation_team %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @battery.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_battery_path(@battery) %> |
+<%= link_to 'Back', batteries_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Model no:</b>
+  <%= @up.model_no %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @up.capacity %>
+</p>
+
+<p>
+  <b>Installed date:</b>
+  <%= @up.installed_date %>
+</p>
+
+<p>
+  <b>Installation team:</b>
+  <%= @up.installation_team %>
+</p>
+
+<p>
+  <b>Input ac voltage:</b>
+  <%= @up.input_ac_voltage %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @up.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_up_path(@up) %> |
+<%= link_to 'Back', ups_path %>

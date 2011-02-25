@@ -1,0 +1,33 @@
+<h1>Listing ups</h1>
+
+<table>
+  <tr>
+    <th>Model no</th>
+    <th>Capacity</th>
+    <th>Installed date</th>
+    <th>Installation team</th>
+    <th>Input ac voltage</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ups.each do |up| %>
+  <tr>
+    <td><%= up.model_no %></td>
+    <td><%= up.capacity %></td>
+    <td><%= up.installed_date %></td>
+    <td><%= up.installation_team %></td>
+    <td><%= up.input_ac_voltage %></td>
+    <td><%= up.comment %></td>
+    <td><%= link_to 'Show', up %></td>
+    <td><%= link_to 'Edit', edit_up_path(up) %></td>
+    <td><%= link_to 'Destroy', up, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Up', new_up_path %>
