@@ -1,4 +1,4 @@
-<%= form_for(@battery) do |f| %>
+<%= form_for([@station, @battery]) do |f| %>
   <% if @battery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@battery.errors.count, "error") %> prohibited this battery from being saved:</h2>
@@ -20,11 +20,11 @@
     <%= f.text_field :capacity %>
   </div>
   <div class="field">
-    <%= f.label :cells_no %><br />
+    <%= f.label "No. of batteries" %><br />
     <%= f.text_field :cells_no %>
   </div>
   <div class="field">
-    <%= f.label :banks_no %><br />
+    <%= f.label "No. of bank" %><br />
     <%= f.text_field :banks_no %>
   </div>
   <div class="field">
@@ -37,8 +37,13 @@
   </div>
   <div class="field">
     <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, :class => "small_text" %>
   </div>
+  
+  <div class="field">
+    <%= f.hidden_field :station_id, :value => @station.id %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: MyString
+  phase: MyString
+  input_voltage: 1
+  installed_date: 2011-04-07
+  installed_team: MyString
+  compressor_type: MyString
+  gas_type: MyString
+
+two:
+  type: MyString
+  phase: MyString
+  input_voltage: 1
+  installed_date: 2011-04-07
+  installed_team: MyString
+  compressor_type: MyString
+  gas_type: MyString

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Servicing date:</b>
+  <%= @servicing_history.servicing_date %>
+</p>
+
+<p>
+  <b>Hour meter reading:</b>
+  <%= @servicing_history.hour_meter_reading %>
+</p>
+
+<p>
+  <b>Servicing type:</b>
+  <%= @servicing_history.servicing_type %>
+</p>
+
+<p>
+  <b>Changed part no:</b>
+  <%= @servicing_history.changed_part_no %>
+</p>
+
+<p>
+  <b>Changed part quantity:</b>
+  <%= @servicing_history.changed_part_quantity %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @servicing_history.description %>
+</p>
+
+<p>
+  <b>Generator:</b>
+  <%= @servicing_history.generator_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_servicing_history_path(@servicing_history) %> |
+<%= link_to 'Back', servicing_histories_path %>
+

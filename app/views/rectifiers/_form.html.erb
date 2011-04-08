@@ -1,4 +1,4 @@
-<%= form_for(@rectifier) do |f| %>
+<%= form_for([@station, @rectifier]) do |f| %>
   <% if @rectifier.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rectifier.errors.count, "error") %> prohibited this rectifier from being saved:</h2>
@@ -20,9 +20,10 @@
     <%= f.text_field :capacity %>
   </div>
   <div class="field">
-    <%= f.label :modules_no %><br />
+    <%= f.label "No of modules" %><br />
     <%= f.text_field :modules_no %>
   </div>
+
   <div class="field">
     <%= f.label :module_capacity %><br />
     <%= f.text_field :module_capacity %>
@@ -41,7 +42,10 @@
   </div>
   <div class="field">
     <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment , :class => "small_text" %>
+  </div>
+   <div class="field">
+    <%= f.hidden_field :station_id, :value => @station.id %>
   </div>
   <div class="actions">
     <%= f.submit %>

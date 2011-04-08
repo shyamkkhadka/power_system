@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  problem: MyString
+  alarm: MyString
+  comments: MyText
+  ac_id: 1
+
+two:
+  problem: MyString
+  alarm: MyString
+  comments: MyText
+  ac_id: 1

@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @battery %> |
-<%= link_to 'Back', batteries_path %>
+<%= link_to 'Back', station_batteries_path(@station) %>
+<script type="text/javascript">
+	activate_tab(1);
+</script>

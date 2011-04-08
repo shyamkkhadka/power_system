@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Genset name:</b>
+  <%= @generator.genset_name %>
+</p>
+
+<p>
+  <b>Model no:</b>
+  <%= @generator.model_no %>
+</p>
+
+<p>
+  <b>Alternator no:</b>
+  <%= @generator.alternator_no %>
+</p>
+
+<p>
+  <b>Engine no:</b>
+  <%= @generator.engine_no %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @generator.capacity %>
+</p>
+
+<p>
+  <b>Installed date:</b>
+  <%= @generator.installed_date %>
+</p>
+
+<p>
+  <b>Installation team:</b>
+  <%= @generator.installation_team %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @generator.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_station_generator_path(@station) %> |
+<%= link_to 'Back', station_generators_path(@station) %>
+
+<hr>
+  <h2> Servicing History feeds </h2>
+  <div id="servicing_history_feed"> </div>
+
+<script type="text/javascript">
+	activate_tab(5);
+	
+	// Load servicing history with ajax pagination
+	$(document).ready(function() {
+     $("#servicing_history_feed").load("/generators/"+ <%= @generator.id %> +"/servicing_histories" );		
+	});
+
+</script>

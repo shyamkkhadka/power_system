@@ -25,13 +25,17 @@
     <td><%= rectifier.installation_team %></td>
     <td><%= rectifier.input_ac_voltage %></td>
     <td><%= rectifier.comment %></td>
-    <td><%= link_to 'Show', rectifier %></td>
-    <td><%= link_to 'Edit', edit_rectifier_path(rectifier) %></td>
-    <td><%= link_to 'Destroy', rectifier, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', station_rectifier_path(@station, rectifier) %></td>
+    <td><%= link_to 'Edit', edit_station_rectifier_path(@station, rectifier) %></td>
+    <td><%= link_to 'Destroy', station_rectifier_path(@station, rectifier), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Rectifier', new_rectifier_path %>
+<%= link_to 'New Rectifier', new_station_rectifier_path(@station) %>
+
+<script type="text/javascript">
+	activate_tab(2);
+</script>

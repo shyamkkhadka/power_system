@@ -1,0 +1,92 @@
+div#header_left {
+	float: left;
+  width:300px;
+}
+
+div#tabs ul li {
+	display: inline-block;
+}
+
+
+div#header {
+	height: 109px;
+	border-bottom:4px solid #296A9A;
+}
+
+div#container {
+	clear:both;
+	margin:5px 5px 0 25px;
+}
+
+div#side_bar {
+	float: left; 
+	width: 230px;
+}
+
+div#side_bar div.block {
+	margin: 5px; padding: 5px; border: 1px solid rgb(58, 58, 58);		
+}
+
+div#header_left div.logo_label {
+	margin-top:-40px;
+	margin-left:32px;
+}
+
+div#content {
+	margin-left: 260px; 
+}
+
+div#container span.title { 
+	color: #333333;
+	font-size: 20px;
+	margin: 5px;
+}
+
+div.row {
+   clear: both;
+   color: #888888;
+   height: 30px;
+}
+
+div.row div.left {
+   color: #555555;
+   display: block;
+   float: left;
+   height: 20px;
+   padding: 5px 8px;
+   width: 74%;
+}
+
+div.row div.right {
+	  display: inline-block;
+    float: right;
+    height: 20px;
+    padding: 5px 8px;
+    text-align: left;
+    width: 5%;
+}
+
+textarea.small_text {
+	height: 140px;
+}
+
+select#ac_ac_type {
+	width: 285px;
+}
+
+form#searchform {
+	position: absolute;
+  right: 10px;
+  z-index: 101;
+}
+	
+form#searchform input {
+		-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: url("/images/search.png") no-repeat scroll 8px center #E1E1E1;
+    border: medium none;
+    padding-left: 28px;
+    width: 120px;
+    -moz-border-radius: 5px;
+}
+
+

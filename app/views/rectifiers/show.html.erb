@@ -41,5 +41,9 @@
 </p>
 
 
-<%= link_to 'Edit', edit_rectifier_path(@rectifier) %> |
-<%= link_to 'Back', rectifiers_path %>
+<%= link_to 'Edit', edit_station_rectifier_path(@station, @rectifier) %> |
+<%= link_to 'Back', station_rectifiers_path(@station) %>
+
+<script type="text/javascript">
+	activate_tab(2);
+</script>

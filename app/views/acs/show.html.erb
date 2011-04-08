@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @ac.ac_type %>
+</p>
+
+<p>
+  <b>Phase:</b>
+  <%= @ac.phase %>
+</p>
+
+<p>
+  <b>Input voltage:</b>
+  <%= @ac.input_voltage %>
+</p>
+
+<p>
+  <b>Installed date:</b>
+  <%= @ac.installed_date %>
+</p>
+
+<p>
+  <b>Installed team:</b>
+  <%= @ac.installed_team %>
+</p>
+
+<p>
+  <b>Compressor type:</b>
+  <%= @ac.compressor_type %>
+</p>
+
+<p>
+  <b>Gas type:</b>
+  <%= @ac.gas_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_station_ac_path(@station) %> |
+<%= link_to 'Back', station_acs_path %>
+<hr>
+  <h2> Fault History feeds </h2>
+  <div id="fault_history_feed"> </div>
+
+<script type="text/javascript">
+	activate_tab(4);
+	
+	// Load servicing history with ajax pagination
+	$(document).ready(function() {
+     $("#fault_history_feed").load("/acs/"+ <%= @ac.id %> +"/fault_histories" );		
+	});
+
+</script>
+
+

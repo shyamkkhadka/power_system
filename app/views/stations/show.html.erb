@@ -1,35 +1,46 @@
+<link href="/stylesheets/tabs.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(document).ready(function() {
+
+	//When page loads...
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+
+	//On Click Event
+	$("ul.tabs li").click(function() {
+
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active ID content
+		return false;
+	});
+	
+});
+
+</script>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @station.name %>
-</p>
-
-<p>
-  <b>Zone:</b>
-  <%= @station.zone %>
-</p>
-
-<p>
-  <b>District:</b>
-  <%= @station.district %>
-</p>
-
-<p>
-  <b>Account office:</b>
-  <%= @station.account_office %>
-</p>
-
-<p>
-  <b>Maintenance office:</b>
-  <%= @station.maintenance_office %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @station.type %>
-</p>
+<h2> Equipment Status of <%= @station.name %> </h2>
 
 
-<%= link_to 'Edit', edit_station_path(@station) %> |
-<%= link_to 'Back', stations_path %>
+<ul class="tabs">
+    <li><a href="/batteries">Battery</a></li>
+    <li><a href="/rectifiers">Rectifier</a></li>
+    <li><a href="#tab2">UPS</a></li>
+    <li><a href="#tab2">AC</a></li>		
+    <li><a href="#tab2">Generator</a></li>		
+</ul>
+
+
+
+
+
+
+
+
+

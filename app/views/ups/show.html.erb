@@ -31,5 +31,12 @@
 </p>
 
 
-<%= link_to 'Edit', edit_up_path(@up) %> |
-<%= link_to 'Back', ups_path %>
+
+<%= link_to 'Edit', edit_station_up_path(@station, @up) %> |
+<%= link_to 'Back', station_ups_path(@station) %>
+
+<script type="text/javascript">
+	activate_tab(3);
+</script>
+
+

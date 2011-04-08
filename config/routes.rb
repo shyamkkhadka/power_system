@@ -1,11 +1,26 @@
 PowerSystem::Application.routes.draw do
-  resources :ups
+ 
+  
+  resources :acs do
+  	resources :fault_histories	
+  end
 
+  resources :generators
+
+  resources :stations do
+		resources :batteries, :rectifiers, :ups, :generators, :acs
+  end
+  
+ 	resources :generators do
+		resources :servicing_histories
+  end
+	
+	resources :batteries
   resources :rectifiers
+	resources :ups
 
-  resources :batteries
 
-  resources :stations
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,7 +71,7 @@ PowerSystem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+   root :to => "stations#index"
 
   # See how all your routes lay out with "rake routes"
 

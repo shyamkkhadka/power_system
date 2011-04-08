@@ -36,5 +36,8 @@
 </p>
 
 
-<%= link_to 'Edit', edit_battery_path(@battery) %> |
-<%= link_to 'Back', batteries_path %>
+<%= link_to 'Edit', edit_station_battery_path(@station, @battery) %> |
+<%= link_to 'Back', station_batteries_path(@station) %>
+<script type="text/javascript">
+	activate_tab(1);
+</script>

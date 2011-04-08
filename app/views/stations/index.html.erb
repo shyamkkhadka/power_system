@@ -1,4 +1,4 @@
-<h1>Listing stations</h1>
+<h1>Power stations under ERD </h1>
 
 <table>
   <tr>
@@ -15,13 +15,12 @@
 
 <% @stations.each do |station| %>
   <tr>
-    <td><%= station.name %></td>
+    <td><%= link_to station.name, station_path(station) %></td>
     <td><%= station.zone %></td>
     <td><%= station.district %></td>
     <td><%= station.account_office %></td>
     <td><%= station.maintenance_office %></td>
     <td><%= station.type %></td>
-    <td><%= link_to 'Show', station %></td>
     <td><%= link_to 'Edit', edit_station_path(station) %></td>
     <td><%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -30,4 +29,3 @@
 
 <br />
 
-<%= link_to 'New Station', new_station_path %>

@@ -23,13 +23,22 @@
     <td><%= battery.installed_date %></td>
     <td><%= battery.installation_team %></td>
     <td><%= battery.comment %></td>
-    <td><%= link_to 'Show', battery %></td>
-    <td><%= link_to 'Edit', edit_battery_path(battery) %></td>
-    <td><%= link_to 'Destroy', battery, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', station_battery_path(@station, battery) %></td>
+    <td><%= link_to 'Edit', edit_station_battery_path(@station, battery) %></td>
+    <td><%= link_to 'Destroy', station_battery_path(@station, battery), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Battery', new_battery_path %>
+<%= link_to 'Add New Battery', new_station_battery_path(@station) %>
+
+<script type="text/javascript">
+	activate_tab(1);
+</script>
+
+
+
+
+

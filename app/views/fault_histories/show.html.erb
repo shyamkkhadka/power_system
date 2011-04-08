@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Problem:</b>
+  <%= @fault_history.problem %>
+</p>
+
+<p>
+  <b>Alarm:</b>
+  <%= @fault_history.alarm %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @fault_history.comments %>
+</p>
+
+<p>
+  <b>Ac:</b>
+  <%= @fault_history.ac_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_fault_history_path(@fault_history) %> |
+<%= link_to 'Back', fault_histories_path %>

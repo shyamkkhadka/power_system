@@ -1,4 +1,5 @@
 class StationsController < ApplicationController
+
   # GET /stations
   # GET /stations.xml
   def index
@@ -16,7 +17,7 @@ class StationsController < ApplicationController
     @station = Station.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to (station_batteries_url(@station)) }
       format.xml  { render :xml => @station }
     end
   end
@@ -44,7 +45,7 @@ class StationsController < ApplicationController
 
     respond_to do |format|
       if @station.save
-        format.html { redirect_to(@station, :notice => 'Station was successfully created.') }
+        format.html { redirect_to(station_batteries_url(@station), :notice => 'Station was successfully created.') }
         format.xml  { render :xml => @station, :status => :created, :location => @station }
       else
         format.html { render :action => "new" }

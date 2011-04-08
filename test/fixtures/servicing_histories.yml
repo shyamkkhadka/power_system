@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  servicing_date: 2011-04-05 13:32:35
+  hour_meter_reading: MyString
+  servicing_type: MyString
+  changed_part_no: MyString
+  changed_part_quantity: 1
+  description: MyText
+  generator_id: 1
+
+two:
+  servicing_date: 2011-04-05 13:32:35
+  hour_meter_reading: MyString
+  servicing_type: MyString
+  changed_part_no: MyString
+  changed_part_quantity: 1
+  description: MyText
+  generator_id: 1

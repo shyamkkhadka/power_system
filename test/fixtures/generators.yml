@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  genset_name: MyString
+  model_no: MyString
+  alternator_no: MyString
+  engine_no: MyString
+  capacity: MyString
+  installed_date: 2011-03-22
+  installation_team: MyString
+  comment: MyString
+
+two:
+  genset_name: MyString
+  model_no: MyString
+  alternator_no: MyString
+  engine_no: MyString
+  capacity: MyString
+  installed_date: 2011-03-22
+  installation_team: MyString
+  comment: MyString
