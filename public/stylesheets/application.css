@@ -90,3 +90,11 @@ form#searchform input {
 }
 
 
+/* will_paginate CSS */
+div.pagination .next_page {
+  float:left;
+  margin-right: 10px;
+}
+
+
+

@@ -1,4 +1,5 @@
-<%= will_paginate @servicing_histories, :param_name => 'page', :page_links => false, :previous_label => "<< Previous ", :next_label => ">> Next"  %>
+<%= will_paginate @servicing_histories, :param_name => 'page', :page_links => false,  :previous_label => "Next >>" , :next_label => "<< Previous " %>
+
 <br/>
 	<% if !@generator.servicing_histories.last.nil? %>
 		<% @servicing_histories.each do |srv_history| %>

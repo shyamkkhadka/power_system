@@ -1,5 +1,6 @@
 class ServicingHistoriesController < ApplicationController
 	layout "tabbed_container"
+	
   # GET /servicing_histories
   # GET /servicing_histories.xml
   def index
