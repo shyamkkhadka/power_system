@@ -3,8 +3,8 @@ class StationsController < ApplicationController
   # GET /stations
   # GET /stations.xml
   def index
-    @stations = Station.all
-
+  	@stations = Station.paginate(:page => params[:page], :per_page => 2, :order => "created_at DESC")
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @stations }

@@ -75,9 +75,8 @@ select#ac_ac_type {
 }
 
 form#searchform {
-	position: absolute;
-  right: 10px;
-  z-index: 101;
+	float:right;
+	margin:5px;
 }
 	
 form#searchform input {
@@ -96,5 +95,15 @@ div.pagination .next_page {
   margin-right: 10px;
 }
 
+div.station_list {
+	  background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: -moz-use-text-color #999999 #999999;
+    border-right: 1px solid #999999;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    border-top: 1px solid;
+}
 
 

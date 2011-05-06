@@ -18,11 +18,13 @@
 	</div>
 </div>
 
-<div id="container">
-	<form id="searchform">
+<form id="searchform">
 		<input type="text" onblur="if (this.value == '') {this.value = 'Search stations...';}" onfocus="if (this.value == 'Search stations...') {this.value = '';}" id="s" name="s" value="Search stations...">
-	</form>
+</form>
 
+
+<div id="container">
+	
 	<%= render :partial => "layouts/sidebar" %>
 
 	<div id="content">

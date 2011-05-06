@@ -1,31 +1,17 @@
-<h1>Power stations under ERD </h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Zone</th>
-    <th>District</th>
-    <th>Account office</th>
-    <th>Maintenance office</th>
-    <th>Type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @stations.each do |station| %>
-  <tr>
-    <td><%= link_to station.name, station_path(station) %></td>
-    <td><%= station.zone %></td>
-    <td><%= station.district %></td>
-    <td><%= station.account_office %></td>
-    <td><%= station.maintenance_office %></td>
-    <td><%= station.type %></td>
-    <td><%= link_to 'Edit', edit_station_path(station) %></td>
-    <td><%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<div class="station_list">
+	<h1>Power stations under ERD </h1>
+	<div class="station_overview">
+	</div>
+	<% @stations.each do |station| %>
+		<h2> <%= link_to station.name, station_path(station) %> </h2>
+		<div> No.of batteries : <%=station.batteries.count %> </div>
+		<div> No.of rectifiers : <%=station.rectifiers.count %> </div>
+		<div> No.of ups : <%=station.ups.count %> </div>
+		<div> No.of generators : <%=station.generators.count %> </div>
+		<div> No.of ups : <%=station.acs.count %> </div>
+		<div><%= link_to 'Edit', edit_station_path(station) %></div>
+    <div><%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></div>
+	<% end %>
+		<%= will_paginate @fault_histories, :param_name => "page", :page_links => true,  :previous_label => " << Previous " , :next_label => "Next >> " , :class => "list_pagination"%>
+</div>
 
