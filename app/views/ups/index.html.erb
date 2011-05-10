@@ -1,36 +1,15 @@
-<h1>Listing ups</h1>
-
-<table>
-  <tr>
-    <th>Model no</th>
-    <th>Capacity</th>
-    <th>Installed date</th>
-    <th>Installation team</th>
-    <th>Input ac voltage</th>
-    <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @ups.each do |up| %>
-  <tr>
-    <td><%= up.model_no %></td>
-    <td><%= up.capacity %></td>
-    <td><%= up.installed_date %></td>
-    <td><%= up.installation_team %></td>
-    <td><%= up.input_ac_voltage %></td>
-    <td><%= up.comment %></td>
- 		<td><%= link_to 'Show', station_up_path(@station, up) %></td>
-    <td><%= link_to 'Edit', edit_station_up_path(@station, up) %></td>
-    <td><%= link_to 'Destroy', station_up_path(@station, up), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% @ups.each_with_index do |up, index| %>
+	 Ups #<%= index + 1 %>
+	<div> Model no: <%= up.model_no %></div>
+	<div> Capacity: <%= up.capacity %></div>
+	<div> Installation data: <%= up.installed_date %></div>
+	<div> Input AC voltage: <%= up.input_ac_voltage %></div>
+	<div> Comments: <%= up.comment %></div>
+	<div><%= link_to 'Edit', edit_station_up_path(@station, up) %> | <%= link_to 'Destroy', station_up_path(@station, up), :confirm => 'Are you sure?', :method => :delete %></div>
+		<hr/>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New UPS', new_station_up_path(@station) %>
+<%= link_to 'Add New UPS', new_station_up_path(@station) %>
 
 
 <script type="text/javascript">

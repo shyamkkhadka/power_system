@@ -4,9 +4,9 @@ class BatteriesController < ApplicationController
 	layout "tabbed_container"
 
   def index
-    @batteries = Battery.all
- 		@station = Station.find(params[:station_id])
-
+    @station = Station.find(params[:station_id])
+		@batteries = @station.batteries
+ 		
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @batteries }

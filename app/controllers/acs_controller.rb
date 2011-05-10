@@ -5,9 +5,9 @@ class AcsController < ApplicationController
   # GET /acs
   # GET /acs.xml
   def index
-    @acs = Ac.all
     @station = Station.find(params[:station_id])
-
+		@acs = @station.acs
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @acs }

@@ -95,7 +95,7 @@ div.pagination .next_page {
   margin-right: 10px;
 }
 
-div.station_list {
+div.no_tab_container {
 	  background: none repeat scroll 0 0 #FFFFFF;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -104,6 +104,25 @@ div.station_list {
     border-style: none solid solid;
     border-width: medium 1px 1px;
     border-top: 1px solid;
+    padding: 10px;
 }
 
+div#station_list div.station_tech_overview {
+	  border-right: 1px solid;
+    display: inline-block;
+    width: 30%;
+    padding: 10px;
+}
+
+
+div#station_list div.station_geo_overview {
+	  display: inline-block;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+div#station_list div.heading {
+	 font-size: 19px;
+	 padding: 5px;
+}
 

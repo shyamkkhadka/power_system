@@ -3,25 +3,12 @@
 <head>
   <title>Power Section Inventory Management System</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :defaults, "autocomplete-rails.js" , "jquery-ui-1.8.12.custom.min.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="header">
-	<div id="header_left">
-		<img src="/images/ntc_logo.png" alt="Nepal Telecom"/>
-		<div class="logo_label"> Nepal Telecom </div>
-	</div>
-	<div id="header_right">
-		<h1> Power Section Inventory Management System  </h1>
-		<h2> Eastern Regional Directorate, Biratnagar </h2>
-	</div>
-</div>
 
-<form id="searchform">
-		<input type="text" onblur="if (this.value == '') {this.value = 'Search stations...';}" onfocus="if (this.value == 'Search stations...') {this.value = '';}" id="s" name="s" value="Search stations...">
-</form>
-
+<%= render :partial => "layouts/header" %>
 
 <div id="container">
 	

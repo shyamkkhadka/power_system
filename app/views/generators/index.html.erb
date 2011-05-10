@@ -1,40 +1,18 @@
-<h1>Listing generators</h1>
-
-<table>
-  <tr>
-    <th>Genset name</th>
-    <th>Model no</th>
-    <th>Alternator no</th>
-    <th>Engine no</th>
-    <th>Capacity</th>
-    <th>Installed date</th>
-    <th>Installation team</th>
-    <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @generators.each do |generator| %>
-  <tr>
-    <td><%= generator.genset_name %></td>
-    <td><%= generator.model_no %></td>
-    <td><%= generator.alternator_no %></td>
-    <td><%= generator.engine_no %></td>
-    <td><%= generator.capacity %></td>
-    <td><%= generator.installed_date %></td>
-    <td><%= generator.installation_team %></td>
-    <td><%= generator.comment %></td>
-    <td><%= link_to 'Show', station_generator_path(@station, generator) %></td>
-    <td><%= link_to 'Edit', edit_station_generator_path(@station, generator) %></td>
-    <td><%= link_to 'Destroy', station_generator_path(@station, generator), :confirm => 'Are you sure?', :method => :delete %></td>
-   </tr>
+<% @generators.each_with_index do |generator, index| %>
+	 Generator #<%= index + 1 %>
+	<div> Genset name: <%= generator.genset_name %></div>
+	<div> Model no: <%= generator.model_no %></div>
+	<div> Alternator no: <%= generator.alternator_no %></div>
+	<div> Engine no: <%= generator.engine_no %></div>
+	<div> Capacity: <%= generator.capacity %></div>
+	<div> Installed date: <%= generator.installation_team %></div>
+	<div> Installation team: <%= generator.installed_date %></div>
+	<div> Comment: <%= generator.comment %></div>
+	<div><%= link_to 'Edit', edit_station_generator_path(@station, generator) %> | <%= link_to 'Destroy', station_generator_path(@station, generator), :confirm => 'Are you sure?', :method => :delete %></div>
+		<hr/>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Generator', new_station_generator_path(@station) %>
+<%= link_to 'Add New Generator', new_station_generator_path(@station) %>
 
 <script type="text/javascript">
 	activate_tab(5);

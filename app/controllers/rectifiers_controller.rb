@@ -4,9 +4,9 @@ class RectifiersController < ApplicationController
 	layout "tabbed_container"
 
   def index
-    @rectifiers = Rectifier.all
-		@station = Station.find(params[:station_id])
-
+    @station = Station.find(params[:station_id])
+		@rectifiers = @station.rectifiers
+		
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rectifiers }

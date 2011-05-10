@@ -4,9 +4,9 @@ class GeneratorsController < ApplicationController
   layout "tabbed_container"
   
   def index
-    @generators = Generator.all
     @station = Station.find(params[:station_id])
-
+		@generators = @station.generators
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @generators }

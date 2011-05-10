@@ -29,7 +29,12 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.8)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    devise (1.2.1)
+      bcrypt-ruby (~> 2.1.2)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -42,6 +47,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    orm_adapter (0.0.4)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -56,6 +62,9 @@ GEM
       activesupport (= 3.0.3)
       bundler (~> 1.0)
       railties (= 3.0.3)
+    rails3-jquery-autocomplete (0.7.0)
+      rails (~> 3.0.0)
+      yajl-ruby
     railties (3.0.3)
       actionpack (= 3.0.3)
       activesupport (= 3.0.3)
@@ -69,13 +78,18 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    warden (1.0.3)
+      rack (>= 1.0.0)
     will_paginate (3.0.pre2)
+    yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  devise
   jquery-rails
   rails (= 3.0.3)
+  rails3-jquery-autocomplete
   sqlite3-ruby
   will_paginate (~> 3.0.pre2)

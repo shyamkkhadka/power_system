@@ -1,7 +1,6 @@
 PowerSystem::Application.routes.draw do
- 
-  
-  resources :acs do
+
+ resources :acs do
   	resources :fault_histories	
   end
 
@@ -9,6 +8,9 @@ PowerSystem::Application.routes.draw do
 
   resources :stations do
 		resources :batteries, :rectifiers, :ups, :generators, :acs
+		post :search_result, :on => :collection
+		get :autocomplete_station_name, :on => :collection
+		get :search, :on => :collection
   end
   
  	resources :generators do
@@ -20,7 +22,14 @@ PowerSystem::Application.routes.draw do
 	resources :ups
 
 
+	#devise_for :users, :path => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+	
+	devise_for :users, :controllers => { :sessions => "sessions" }
 
+	
+
+
+	#get :autocomplete_station_name, :on => :collection
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

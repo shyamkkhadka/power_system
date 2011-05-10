@@ -8,7 +8,8 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'jquery-rails'
 gem "will_paginate", "~> 3.0.pre2"
-
+gem 'rails3-jquery-autocomplete'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

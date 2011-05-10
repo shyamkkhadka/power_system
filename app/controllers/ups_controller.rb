@@ -4,8 +4,9 @@ class UpsController < ApplicationController
 	layout "tabbed_container"
 
   def index
-    @ups = Up.all
-		@station = Station.find(params[:station_id])
+    @station = Station.find(params[:station_id])
+    @ups = @station.ups
+		
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @ups }

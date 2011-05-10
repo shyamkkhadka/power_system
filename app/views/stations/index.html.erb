@@ -1,17 +1,32 @@
-<div class="station_list">
+<%#= form_tag '/stations/search_result' do
+  autocomplete_field_tag 'name', '', autocomplete_station_name_stations_path, :size => 75
+end
+%>
+
+<div id="station_list" class="no_tab_container">
 	<h1>Power stations under ERD </h1>
-	<div class="station_overview">
-	</div>
+
+	
 	<% @stations.each do |station| %>
-		<h2> <%= link_to station.name, station_path(station) %> </h2>
-		<div> No.of batteries : <%=station.batteries.count %> </div>
-		<div> No.of rectifiers : <%=station.rectifiers.count %> </div>
-		<div> No.of ups : <%=station.ups.count %> </div>
-		<div> No.of generators : <%=station.generators.count %> </div>
-		<div> No.of ups : <%=station.acs.count %> </div>
-		<div><%= link_to 'Edit', edit_station_path(station) %></div>
-    <div><%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></div>
+		<div class="heading"> <%= link_to station.name, station_path(station) %> </div>
+		<div class="station_tech_overview" >
+			<div> No.of batteries : <%=station.batteries.count %> </div>
+			<div> No.of rectifiers : <%=station.rectifiers.count %> </div>
+			<div> No.of ups : <%=station.ups.count %> </div>
+			<div> No.of generators : <%=station.generators.count %> </div>
+			<div> No.of ups : <%=station.acs.count %> </div>
+			</div>
+			<div class="station_geo_overview">
+				<div> Zone : <%= station.zone %> </div>
+				<div> District : <%= station.district %> </div>
+				<div> Account office: : <%= station.account_office %> </div>
+				<div> Maintenance office: : <%= station.maintenance_office %> </div>
+				<div> Station Type: : <%= station.type %> </div>
+				<div><%= link_to 'Edit', edit_station_path(station) %> | <%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></div>
+			</div>
+			
 	<% end %>
-		<%= will_paginate @fault_histories, :param_name => "page", :page_links => true,  :previous_label => " << Previous " , :next_label => "Next >> " , :class => "list_pagination"%>
+	
+		<%= will_paginate @stations, :param_name => "page", :page_links => true,  :previous_label => " << Previous " , :next_label => "Next >> " , :class => "list_pagination"%>
 </div>
 
