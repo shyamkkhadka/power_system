@@ -15,22 +15,20 @@
 	<%= render :partial => "layouts/sidebar" %>
 
 	<div id="content">
-	<h2> Equipment status of <%= @station.name %> power station </h2>
-	<ul class="tabs">
-    	<li><%= link_to "Battery", station_batteries_path(@station) %></li>
-    	<li><%= link_to "Rectifier", station_rectifiers_path(@station) %></li>
-    	<li><%= link_to "UPS", station_ups_path(@station) %></li>
-    	<li><%= link_to "AC", station_acs_path(@station) %></li>		
-    	<li><%= link_to "Generator", station_generators_path(@station) %></li>		
+		<h2> Equipment status of <%= @station.name %> power station </h2>
+		<ul class="tabs">
+    		<li><%= link_to "Battery", station_batteries_path(@station) %></li>
+    		<li><%= link_to "Rectifier", station_rectifiers_path(@station) %></li>
+    		<li><%= link_to "UPS", station_ups_path(@station) %></li>
+    		<li><%= link_to "AC", station_acs_path(@station) %></li>		
+    		<li><%= link_to "Generator", station_generators_path(@station) %></li>		
 		</ul>
-
 
 		<div class="tab_container">
 			<div id="tab1" class="tab_content">
 				<%= yield %>
 			</div>
 		</div>
-
 	</div>
 	
 </div>

@@ -1,10 +1,12 @@
 class GeneratorsController < ApplicationController
-  # GET /generators
-  # GET /generators.xml
+  before_filter :authenticate_user!
   layout "tabbed_container"
-  
+ 
+  # GET /generators
+  # GET /generators.xml 
   def index
     @station = Station.find(params[:station_id])
+   # @generators = @station.generators.paginate(:page => params[:page], :per_page => 1, :order => "created_at DESC")
 		@generators = @station.generators
     
     respond_to do |format|
@@ -52,7 +54,7 @@ class GeneratorsController < ApplicationController
 
     respond_to do |format|
       if @generator.save
-        format.html { redirect_to(station_generator_path(@station, @generator), :notice => 'Generator was successfully created.') }
+        format.html { redirect_to(station_generators_path(@station), :notice => 'Generator was successfully created.') }
         format.xml  { render :xml => @generator, :status => :created, :location => @generator }
       else
         format.html { render :action => "new" }

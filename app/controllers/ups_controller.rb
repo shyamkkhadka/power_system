@@ -1,8 +1,9 @@
 class UpsController < ApplicationController
+  before_filter :authenticate_user!
+  layout "tabbed_container"
+  
   # GET /ups
   # GET /ups.xml
-	layout "tabbed_container"
-
   def index
     @station = Station.find(params[:station_id])
     @ups = @station.ups
@@ -51,7 +52,7 @@ class UpsController < ApplicationController
 
     respond_to do |format|
       if @up.save
-        format.html {  redirect_to(station_up_path(@station, @up), :notice => 'Up was successfully created.') }
+        format.html {  redirect_to(station_ups_path(@station), :notice => 'Up was successfully created.') }
         format.xml  { render :xml => @up, :status => :created, :location => @up }
       else
         format.html { render :action => "new" }

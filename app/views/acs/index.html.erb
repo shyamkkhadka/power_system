@@ -1,39 +1,22 @@
-<h1>Listing acs</h1>
-
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Phase</th>
-    <th>Input voltage</th>
-    <th>Installed date</th>
-    <th>Installed team</th>
-    <th>Compressor type</th>
-    <th>Gas type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @acs.each do |ac| %>
-  <tr>
-    <td><%= ac.ac_type %></td>
-    <td><%= ac.phase %></td>
-    <td><%= ac.input_voltage %></td>
-    <td><%= ac.installed_date %></td>
-    <td><%= ac.installed_team %></td>
-    <td><%= ac.compressor_type %></td>
-    <td><%= ac.gas_type %></td>
-    <td><%= link_to 'Show', station_ac_path(@station, ac) %></td>
-    <td><%= link_to 'Edit', edit_station_ac_path(@station, ac) %></td>
-    <td><%= link_to 'Destroy', station_ac_path(@station, ac), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% @acs.each_with_index do |ac, index| %>
+  Ac # <%= index + 1 %> 
+  <div> Type: <%= ac.ac_type %> </div>
+  <div> Phase: <%= ac.phase %> </div>
+  <div> Input voltage: <%= ac.input_voltage %> </div>
+  <div> Compressor type: <%= ac.compressor_type %> </div>
+  <div> Gas type: <%= ac.gas_type %> </div>
+  <div> Installed date: <%= ac.installed_date %> </div>
+  <div> Installation team: <%= ac.installed_team %> </div>
+ 	<div><%= link_to 'Edit', edit_station_ac_path(@station, ac) %> | 
+ 	<%= link_to 'Delete', station_ac_path(@station, ac), :confirm => 'Are you sure?', :method => :delete %></div>
+ 	 <p><%= link_to "View Fault history", ac_fault_histories_path(ac) %></p>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Ac', new_station_ac_path(@station) %>
+<%= link_to 'Add New ac', new_station_ac_path(@station) %>
 
 <script type="text/javascript">
 	activate_tab(4);
 </script>
+

@@ -1,5 +1,5 @@
 class AcsController < ApplicationController
-
+	before_filter :authenticate_user!
 	layout "tabbed_container"
 	
   # GET /acs
@@ -52,7 +52,7 @@ class AcsController < ApplicationController
 
     respond_to do |format|
       if @ac.save
-        format.html { redirect_to(station_ac_path(@station, @ac), :notice => 'Ac was successfully created.') }
+        format.html { redirect_to(station_acs_path(@station), :notice => 'Ac was successfully created.') }
         format.xml  { render :xml => @ac, :status => :created, :location => @ac }
       else
         format.html { render :action => "new" }

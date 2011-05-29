@@ -1,5 +1,5 @@
 class FaultHistoriesController < ApplicationController
-
+	before_filter :authenticate_user!
 	layout "tabbed_container"
   
   # GET /fault_histories
@@ -9,12 +9,12 @@ class FaultHistoriesController < ApplicationController
     @ac = Ac.find(params[:ac_id])
     @station = @ac.station
     @fault_histories = @ac.fault_histories.paginate(:page => params[:page], :per_page => 1, :order => "created_at DESC")
-    render :layout => false 
+    #render :layout => false 
 
-    #respond_to do |format|
-      #format.html # index.html.erb
-      #format.xml  { render :xml => @fault_histories }
-    #end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @fault_histories }
+    end
   end
 
   # GET /fault_histories/1
@@ -55,7 +55,7 @@ class FaultHistoriesController < ApplicationController
 
     respond_to do |format|
       if @fault_history.save
-        format.html { redirect_to(station_ac_path(@station, @ac), :notice => 'Fault history was successfully created.') }
+        format.html { redirect_to(ac_fault_histories_path(@ac), :notice => 'Fault history was successfully created.') }
         format.xml  { render :xml => @fault_history, :status => :created, :location => @fault_history }
       else
         format.html { render :action => "new" }

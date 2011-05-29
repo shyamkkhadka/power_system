@@ -1,21 +1,21 @@
-<%= will_paginate @fault_histories, :param_name => 'page', :page_links => false,  :previous_label => "Next >>" , :next_label => "<< Previous " %>
-
-<br/>
-	<%# if !@generator.fault_histories.last.nil? %>
+<p>Fault history of AC </b>, installed in <%= @station.name %> <%= @station.account_office %> </p>
+<% if !@ac.fault_histories.last.nil? %>
 		<% @fault_histories.each do |fault_history| %>
 		<div> Fault on <%= fault_history.created_at %></div>
 		<div>Problem : <%= fault_history.problem %></div>
 		<div>Alarm : <%= fault_history.alarm %> </div>
 		<div>Comments: <%= fault_history.comments %> </div>
-	 
-  	<span> <%= link_to "Delete", ac_fault_history_path(@ac, @ac.fault_histories.last), :confirm => 'Are you sure?', :method => :delete %> </span>
-
+		<p> <%= link_to "Delete", ac_fault_history_path(@ac, fault_history), :confirm => 'Are you sure?', :method => :delete %> </p>
 		<% end %>
 		
+<% end %>
+
+
   
-  <%# end %>
-  
+<%= will_paginate @fault_histories, :param_name => 'page', :page_links => false,  :previous_label => "Next >>" , :next_label => "<< Previous " %>
+<p> <%= link_to "Add New Fault History", new_ac_fault_history_path(@ac) %> </p>
+
 <script type="text/javascript">
 	activate_tab(4);
-  formatLinkForPaginationURL("ac");
+  //formatLinkForPaginationURL("ac");
 </script>

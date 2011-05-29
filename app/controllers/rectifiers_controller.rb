@@ -1,8 +1,10 @@
 class RectifiersController < ApplicationController
-  # GET /rectifiers
-  # GET /rectifiers.xml
-	layout "tabbed_container"
+  before_filter :authenticate_user!
+  layout "tabbed_container"
 
+	# GET /rectifiers
+  # GET /rectifiers.xml
+	
   def index
     @station = Station.find(params[:station_id])
 		@rectifiers = @station.rectifiers
@@ -51,7 +53,7 @@ class RectifiersController < ApplicationController
 				
     respond_to do |format|
       if @rectifier.save
-        format.html { redirect_to(station_rectifier_path(@station, @rectifier), :notice => 'Rectifier was successfully created.') }
+        format.html { redirect_to(station_rectifiers_path(@station), :notice => 'Rectifier was successfully created.') }
         format.xml  { render :xml => @rectifier, :status => :created, :location => @rectifier }
       else
         format.html { render :action => "new" }

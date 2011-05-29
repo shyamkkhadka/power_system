@@ -1,7 +1,10 @@
 class BatteriesController < ApplicationController
+  before_filter :authenticate_user!
+  layout "tabbed_container"
+  	  
   # GET /batteries
   # GET /batteries.xml
-	layout "tabbed_container"
+
 
   def index
     @station = Station.find(params[:station_id])
@@ -52,7 +55,7 @@ class BatteriesController < ApplicationController
 		
     respond_to do |format|
       if @battery.save
-				format.html { redirect_to(station_battery_path(@station, @battery), :notice => 'Battery was successfully created.') }
+				format.html { redirect_to(station_batteries_path(@station), :notice => 'Battery was successfully created.') }
         format.xml  { render :xml => @battery, :status => :created, :location => @battery }
       else
         format.html { render :action => "new" }

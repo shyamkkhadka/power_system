@@ -44,7 +44,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	border-top: none;
 	overflow: hidden;
 	float: left; width: 100%;
-	background: #fff;
+	backgr/ound-color:#f6f6f6;
 	-moz-border-radius-bottomleft: 5px;
 	 -moz-border-radius-bottomright: 5px;
    	margin-bottom: 4px;

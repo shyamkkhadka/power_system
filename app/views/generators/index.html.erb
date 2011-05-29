@@ -1,5 +1,5 @@
 <% @generators.each_with_index do |generator, index| %>
-	 Generator #<%= index + 1 %>
+	Generator #<%= index + 1 %>
 	<div> Genset name: <%= generator.genset_name %></div>
 	<div> Model no: <%= generator.model_no %></div>
 	<div> Alternator no: <%= generator.alternator_no %></div>
@@ -8,12 +8,13 @@
 	<div> Installed date: <%= generator.installation_team %></div>
 	<div> Installation team: <%= generator.installed_date %></div>
 	<div> Comment: <%= generator.comment %></div>
-	<div><%= link_to 'Edit', edit_station_generator_path(@station, generator) %> | <%= link_to 'Destroy', station_generator_path(@station, generator), :confirm => 'Are you sure?', :method => :delete %></div>
-		<hr/>
+	<div><%= link_to 'Edit', edit_station_generator_path(@station, generator) %> | <%= link_to 'Delete', station_generator_path(@station, generator), :confirm => 'Are you sure?', :method => :delete %></div>
+ <p><%= link_to "View Servicing history", generator_servicing_histories_path(generator) %></p>
+
 <% end %>
 
-<%= link_to 'Add New Generator', new_station_generator_path(@station) %>
-
+<p><%= link_to 'Add New Generator', new_station_generator_path(@station) %></p>
 <script type="text/javascript">
 	activate_tab(5);
 </script>
+

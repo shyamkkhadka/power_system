@@ -1,9 +1,8 @@
 class SessionsController < Devise::SessionsController
-
-	
+ 
  def new
- 	 #super
-   render :layout => false
+ 	 super
+   #render :layout => false
   end
 
   def create

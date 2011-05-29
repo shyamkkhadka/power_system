@@ -1,27 +1,25 @@
-<%= will_paginate @servicing_histories, :param_name => 'page', :page_links => false,  :previous_label => "Next >>" , :next_label => "<< Previous " %>
-
-<br/>
+<p>Servicing history of <b> <%= @generator.genset_name %> generator </b>, installed in <%= @station.name %> <%= @station.account_office %> </p>
 	<% if !@generator.servicing_histories.last.nil? %>
 		<% @servicing_histories.each do |srv_history| %>
-		<div>Servicing details on <%= srv_history.servicing_date %></div>
+		<div>Servicing date <%= srv_history.servicing_date %></div>
 		<div>Hour meter reading : <%= srv_history.hour_meter_reading %></div>
 		<div>Servicing type : <%= srv_history.servicing_type %> </div>
 		<div>Changed part no : <%= srv_history.changed_part_no %> </div>
 		<div>Changed part quantity : <%= srv_history.changed_part_quantity %> </div>
 		<div>Description : <%= srv_history.description %> </div>
-		<span> 
-  		<%#= link_to "Edit", edit_generator_servicing_history_path(@generator, @generator.servicing_histories.last) %> 
-  	</span>  
-  	<span> <%= link_to "Delete", generator_servicing_history_path(@generator, @generator.servicing_histories.last), :confirm => 'Are you sure?', :method => :delete%> </span>
-
+		 <p> <%= link_to "Delete", generator_servicing_history_path(@generator, srv_history, :confirm => 'Are you sure?', :method => :delete%> </p>
 		<% end %>
-		
+	<% end %>
+   
+  <%= will_paginate @servicing_histories, :param_name => 'page', :page_links => false,  :previous_label => "Next >>" , :next_label => "<< Previous " %>
 
-  
-  <% end %>
+<p> <%#= link_to "Edit", edit_generator_servicing_history_path(@generator, @generator.servicing_histories.last) %> </p>  
+<p> <%= link_to "Add New Servicing Details", new_generator_servicing_history_path(@generator) %> </p>
+
+
   
 <script type="text/javascript">
 	activate_tab(5);
-  formatLinkForPaginationURL("generator");
+ // formatLinkForPaginationURL("generator");
 </script>
 

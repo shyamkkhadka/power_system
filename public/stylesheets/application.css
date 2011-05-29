@@ -1,39 +1,91 @@
-div#header_left {
-	float: left;
-  width:300px;
+/* CSS Document */
+
+body {
+	padding:0px; 
+	margin:0px;
+	background-color:#fafafa; 
+	font:11px/20px Tahoma, Arial, Helvetica, sans-serif;
+	}
+
+ul{list-style-type:none}
+
+/***** HEADER ******/
+div#header {
+	margin:0; 
+	padding:10px;
+	height: 114px;
+	background-color:#2275a5;
+	border-bottom:3px solid #094c73;
 }
+
+div#header_left {
+  float: left;
+  width:200px;
+  margin:0;
+}
+
+div#header_left div.logo_label {
+	margin-top:0px;
+	margin-left:0px;
+}
+
+div#header_right h1 {
+  color: #fff;
+  margin-top:10px;
+  font:24px/18px  Arial,Tahoma, Helvetica;
+}
+
+div#header_right h2 {
+  color: yellow;
+  margin-top:15px;
+  font:18px/18px  Arial,Tahoma, Helvetica;
+}
+
+div#header_right span a:link{
+	color:yellow;
+}
+.welcome, .sign_out{ color:#FFF !important;}
 
 div#tabs ul li {
 	display: inline-block;
 }
 
-
-div#header {
-	height: 109px;
-	border-bottom:4px solid #296A9A;
+form#searchform input {
+	-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: url("/images/search.png") no-repeat scroll 8px center #E1E1E1;
+    border: medium none;
+    padding-left: 28px;
+    width: 120px;
+    -moz-border-radius: 5px;
 }
 
+/***** BODY ******/
 div#container {
 	clear:both;
-	margin:5px 5px 0 25px;
+	margin:10px 10px 0 10px;
+	background-color:#fafafa;
+	color:#46596a;
+	font:14px/18px  Arial,Tahoma, Helvetica;
 }
 
 div#side_bar {
 	float: left; 
-	width: 230px;
+	width: 240px;
 }
 
 div#side_bar div.block {
-	margin: 5px; padding: 5px; border: 1px solid rgb(58, 58, 58);		
-}
-
-div#header_left div.logo_label {
-	margin-top:-40px;
-	margin-left:32px;
+	margin: 10px 0 10px; padding: 10px; 
+	border: 3px solid #ddd; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;
+	-khtml-border-radius: 10px;
+	border-radius:10px;
+	background-color:#f6f6f6;		
 }
 
 div#content {
-	margin-left: 260px; 
+	margin-left: 250px;
+	backgr/ound-color:#f6f6f6;
 }
 
 div#container span.title { 
@@ -44,12 +96,12 @@ div#container span.title {
 
 div.row {
    clear: both;
-   color: #888888;
+   color:#46596a;
    height: 30px;
 }
 
 div.row div.left {
-   color: #555555;
+   color:#46596a;
    display: block;
    float: left;
    height: 20px;
@@ -73,22 +125,13 @@ textarea.small_text {
 select#ac_ac_type {
 	width: 285px;
 }
-
+#formsearch{clear:both;width:100%;background-color:#525252; height:30px; margin-top:0px;z-index:100;}
 form#searchform {
+	
 	float:right;
 	margin:5px;
 }
 	
-form#searchform input {
-		-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.3);
-    background: url("/images/search.png") no-repeat scroll 8px center #E1E1E1;
-    border: medium none;
-    padding-left: 28px;
-    width: 120px;
-    -moz-border-radius: 5px;
-}
-
-
 /* will_paginate CSS */
 div.pagination .next_page {
   float:left;
@@ -96,19 +139,21 @@ div.pagination .next_page {
 }
 
 div.no_tab_container {
-	  background: none repeat scroll 0 0 #FFFFFF;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-color: -moz-use-text-color #999999 #999999;
-    border-right: 1px solid #999999;
-    border-style: none solid solid;
-    border-width: medium 1px 1px;
-    border-top: 1px solid;
+	
     padding: 10px;
 }
 
+div.no_tab_container {
+	border: 3px solid #ddd; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;
+	-khtml-border-radius: 10px;
+	border-radius:10px;
+		background-color:#f6f6f6;
+}
+
 div#station_list div.station_tech_overview {
-	  border-right: 1px solid;
+		
     display: inline-block;
     width: 30%;
     padding: 10px;
@@ -116,7 +161,7 @@ div#station_list div.station_tech_overview {
 
 
 div#station_list div.station_geo_overview {
-	  display: inline-block;
+	display: inline-block;
     margin-left: 20px;
     padding: 10px;
 }
@@ -126,3 +171,5 @@ div#station_list div.heading {
 	 padding: 5px;
 }
 
+a:link{color:#336699;}
+a:link hover{color:#dd7500;}

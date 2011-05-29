@@ -1,40 +1,19 @@
-<h1>Listing rectifiers</h1>
-
-<table>
-  <tr>
-    <th>Model no</th>
-    <th>Capacity</th>
-    <th>Modules no</th>
-    <th>Module capacity</th>
-    <th>Installed date</th>
-    <th>Installation team</th>
-    <th>Input ac voltage</th>
-    <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @rectifiers.each do |rectifier| %>
-  <tr>
-    <td><%= rectifier.model_no %></td>
-    <td><%= rectifier.capacity %></td>
-    <td><%= rectifier.modules_no %></td>
-    <td><%= rectifier.module_capacity %></td>
-    <td><%= rectifier.installed_date %></td>
-    <td><%= rectifier.installation_team %></td>
-    <td><%= rectifier.input_ac_voltage %></td>
-    <td><%= rectifier.comment %></td>
-    <td><%= link_to 'Show', station_rectifier_path(@station, rectifier) %></td>
-    <td><%= link_to 'Edit', edit_station_rectifier_path(@station, rectifier) %></td>
-    <td><%= link_to 'Destroy', station_rectifier_path(@station, rectifier), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% @rectifiers.each_with_index do |rectifier, index| %>
+  Rectifier # <%= index + 1 %> 
+  <div> Model no: <%= rectifier.model_no %> </div>
+  <div> Capacity: <%= rectifier.capacity %> </div>
+  <div> Modules no: <%= rectifier.modules_no %> </div>
+  <div> Module capacity: <%= rectifier.module_capacity %> </div>
+  <div> Input AC voltage: <%= rectifier.input_ac_voltage %> </div>
+  <div> Installed date: <%= rectifier.installed_date %> </div>
+  <div> Installation team: <%= rectifier.installation_team %> </div>
+ 	<div><%= link_to 'Edit', edit_station_rectifier_path(@station, rectifier) %> | 
+ 	<%= link_to 'Destroy', station_rectifier_path(@station, rectifier), :confirm => 'Are you sure?', :method => :delete %></div>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Rectifier', new_station_rectifier_path(@station) %>
+<%= link_to 'Add New rectifier', new_station_rectifier_path(@station) %>
 
 <script type="text/javascript">
 	activate_tab(2);

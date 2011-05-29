@@ -1,5 +1,6 @@
 class ServicingHistoriesController < ApplicationController
-	layout "tabbed_container"
+  before_filter :authenticate_user!
+  layout "tabbed_container"
 	
   # GET /servicing_histories
   # GET /servicing_histories.xml
@@ -8,11 +9,11 @@ class ServicingHistoriesController < ApplicationController
     @generator = Generator.find(params[:generator_id])
     @station = @generator.station
     @servicing_histories = @generator.servicing_histories.paginate(:page => params[:page], :per_page => 1, :order => "created_at DESC")
-    render :layout => false 
-   #respond_to do |format|
-      #format.html # index.html.erb
-      #format.xml  { render :xml => @servicing_histories }
-    #end
+    #render :layout => false 
+   respond_to do |format|
+   	  format.html # index.html.erb
+      format.xml  { render :xml => @servicing_histories }
+    end
   end
 
   # GET /servicing_histories/1
@@ -57,7 +58,7 @@ class ServicingHistoriesController < ApplicationController
 
     respond_to do |format|
       if @servicing_history.save
-        format.html { redirect_to(station_generator_path(@station, @generator), :notice => 'Servicing history was successfully created.') }
+        format.html { redirect_to(generator_servicing_histories_path(@generator), :notice => 'Servicing history was successfully created.') }
         format.xml  { render :xml => @servicing_history, :status => :created, :location => @servicing_history }
       else
         format.html { render :action => "new" }
