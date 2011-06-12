@@ -207,6 +207,7 @@ div#station_list div.station_geo_overview {
 div#station_list div.heading {
 	 font-size: 19px;
 	 padding: 5px;
+	 margin-left: 10px;
 }
 
 div.fault-servicing-history {
