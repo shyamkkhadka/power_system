@@ -1,10 +1,29 @@
-<p>Fault history of AC </b>, installed in <%= @station.name %> <%= @station.account_office %> </p>
+<div class="fault-servicing-history">
+	Fault history of AC </b>, installed in <span style="color:#336699"><%= @station.name %> <%= @station.account_office %> </span> 
+</div>
+
 <% if !@ac.fault_histories.last.nil? %>
 		<% @fault_histories.each do |fault_history| %>
-		<div> Fault on <%= fault_history.created_at %></div>
-		<div>Problem : <%= fault_history.problem %></div>
-		<div>Alarm : <%= fault_history.alarm %> </div>
-		<div>Comments: <%= fault_history.comments %> </div>
+			<div class="small-row">
+				<div class="small-left"> Fault on   </div>
+				<div class="small-right"> <%= fault_history.created_at %> </div>
+			</div>
+
+			<div class="small-row">
+				<div class="small-left"> Problem :  </div>
+				<div class="small-right"> <%= fault_history.problem %> </div>
+			</div>
+			
+			<div class="small-row">
+				<div class="small-left"> Alarm : </div>
+				<div class="small-right"> <%= fault_history.alarm %> </div>
+			</div>
+			
+			<div class="small-row">
+				<div class="small-left"> Comments : </div>
+				<div class="small-right"> <%= fault_history.comments %> </div>
+			</div>
+
 		<p> <%= link_to "Delete", ac_fault_history_path(@ac, fault_history), :confirm => 'Are you sure?', :method => :delete %> </p>
 		<% end %>
 		
@@ -13,7 +32,7 @@
 
   
 <%= will_paginate @fault_histories, :param_name => 'page', :page_links => false,  :previous_label => "Next >>" , :next_label => "<< Previous " %>
-<p> <%= link_to "Add New Fault History", new_ac_fault_history_path(@ac) %> </p>
+<div style="margin-top:6px"> <%= link_to "Add New Fault History", new_ac_fault_history_path(@ac) %> </div>
 
 <script type="text/javascript">
 	activate_tab(4);

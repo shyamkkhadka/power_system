@@ -10,21 +10,65 @@ end
 	<% @stations.each do |station| %>
 		<div class="heading"> <%= link_to station.name, station_path(station) %> </div>
 		<div class="station_tech_overview" >
-			<div> No.of batteries : <%=station.batteries.count %> </div>
-			<div> No.of rectifiers : <%=station.rectifiers.count %> </div>
-			<div> No.of ups : <%=station.ups.count %> </div>
-			<div> No.of generators : <%=station.generators.count %> </div>
-			<div> No.of ups : <%=station.acs.count %> </div>
+			<div class="small-row"> 
+  			<div class="small-left">  No.of batteries : </div>
+  			<div class="small-right"><%= station.batteries.count %> </div>
+  		</div>
+  		
+  		<div class="small-row"> 
+  			<div class="small-left">  No.of rectifiers : </div>
+  			<div class="small-right"><%= station.rectifiers.count %> </div>
+  		</div>
+
+			<div class="small-row"> 
+  			<div class="small-left">  No.of ups : </div>
+  			<div class="small-right"><%= station.ups.count %> </div>
+  		</div>
+			
+			<div class="small-row"> 
+  			<div class="small-left">  No.of generators : </div>
+  			<div class="small-right"><%= station.generators.count %> </div>
+  		</div>
+
+			<div class="small-row"> 
+  			<div class="small-left">  No.of acs : </div>
+  			<div class="small-right"><%= station.acs.count %> </div>
+  		</div>
+
+		</div>
+		
+		<div class="station_geo_overview">
+			<div class="small-row"> 
+				<div class="small-left"> Zone : </div>
+  			<div class="small-right"><%= station.zone %> </div>
 			</div>
-			<div class="station_geo_overview">
-				<div> Zone : <%= station.zone %> </div>
-				<div> District : <%= station.district %> </div>
-				<div> Account office: : <%= station.account_office %> </div>
-				<div> Maintenance office: : <%= station.maintenance_office %> </div>
-				<div> Station Type: : <%= station.type %> </div>
-				<div><%= link_to 'Edit', edit_station_path(station) %> | <%= link_to 'Destroy', station, :confirm => 'Are you sure?', :method => :delete %></div>
+		
+			<div class="small-row"> 
+				<div class="small-left"> District : </div>
+  			<div class="small-right"><%= station.district %> </div>
+			</div>
+		
+			<div class="small-row"> 
+				<div class="small-left"> Account office : </div>
+  			<div class="small-right"><%= station.account_office %> </div>
 			</div>
 			
+			<div class="small-row"> 
+				<div class="small-left"> Maintenance office : </div>
+  			<div class="small-right"><%= station.maintenance_office %> </div>
+			</div>
+			
+			<div class="small-row"> 
+				<div class="small-left"> Station Type : </div>
+  			<div class="small-right"><%= station.type %> </div>
+			</div>
+		
+		</div>
+	
+		<div>
+			<%= link_to 'Edit', edit_station_path(station) %> | 
+			<%= link_to 'Delete', station, :confirm => 'Are you sure?', :method => :delete %>
+		</div>		
 	<% end %>
 	
 		<%= will_paginate @stations, :param_name => "page", :page_links => true,  :previous_label => " << Previous " , :next_label => "Next >> " , :class => "list_pagination"%>

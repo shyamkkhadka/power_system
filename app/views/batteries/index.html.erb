@@ -1,15 +1,42 @@
 <% @batteries.each_with_index do |battery, index| %>
-<div style="margin-bottom:5px">
-  Battery # <%= index + 1 %> 
-  <div> Model no: <%= battery.model_no %> </div>
-  <div> Capacity: <%= battery.capacity %> </div>
-  <div> Cells no: <%= battery.cells_no %> </div>
-  <div> Banks no: <%= battery.banks_no %> </div>
-  <div> Installed date: <%= battery.installed_date %> </div>
-  <div> Installation team: <%= battery.installation_team %> </div>
- 	<div><%= link_to 'Edit', edit_station_battery_path(@station, battery) %> | 
- 	<%= link_to 'Delete', station_battery_path(@station, battery), :confirm => 'Are you sure?', :method => :delete %></div>
+ <div class="element"> Battery # <%= index + 1 %> </div>
+ <div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
+ 	<div class="small-row"> 
+  	<div class="small-left"> Model no: </div>
+  	<div class="small-right"><%= battery.model_no %></div>
+  </div>
+  
+  <div class="small-row"> 
+  	<div class="small-left"> Capacity: </div>
+  	<div class="small-right"><%= battery.capacity %> KVA </div>
+  </div>
+
+  <div class="small-row"> 
+  	<div class="small-left"> Cells no: </div>
+  	<div class="small-right"><%= battery.cells_no %></div>
+  </div>
+
+  <div class="small-row"> 
+  	<div class="small-left"> Banks no: </div>
+  	<div class="small-right"><%= battery.banks_no %></div>
+  </div>
+
+  <div class="small-row"> 
+  	<div class="small-left"> Installed date: </div>
+  	<div class="small-right"><%= battery.installed_date %></div>
+  </div>
+
+	<div class="small-row"> 
+  	<div class="small-left"> Installation team: </div>
+  	<div class="small-right"><%= battery.installation_team %></div>
+  </div>
+  
+ 	<div class="small-row">
+ 		<%= link_to 'Edit', edit_station_battery_path(@station, battery) %> | 
+ 		<%= link_to 'Delete', station_battery_path(@station, battery), :confirm => 'Are you sure?', :method => :delete %>
  	</div>
+ 
+ </div>
 
 <% end %>
 

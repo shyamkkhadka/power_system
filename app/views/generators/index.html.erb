@@ -1,19 +1,65 @@
 <% @generators.each_with_index do |generator, index| %>
-	Generator #<%= index + 1 %>
-	<div> Genset name: <%= generator.genset_name %></div>
-	<div> Model no: <%= generator.model_no %></div>
-	<div> Alternator no: <%= generator.alternator_no %></div>
-	<div> Engine no: <%= generator.engine_no %></div>
-	<div> Capacity: <%= generator.capacity %></div>
-	<div> Installed date: <%= generator.installation_team %></div>
-	<div> Installation team: <%= generator.installed_date %></div>
-	<div> Comment: <%= generator.comment %></div>
-	<div><%= link_to 'Edit', edit_station_generator_path(@station, generator) %> | <%= link_to 'Delete', station_generator_path(@station, generator), :confirm => 'Are you sure?', :method => :delete %></div>
- <p><%= link_to "View Servicing history", generator_servicing_histories_path(generator) %></p>
+ 	<div class="element"> Ac # <%= index + 1 %> </div>
+  <div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
+  	<div class="small-row"> 
+  		<div class="small-left"> Genset name: </div>
+  		<div class="small-right"><%=generator.genset_name %> </div>
+  	</div>
+  
+  	<div class="small-row"> 
+  		<div class="small-left"> Model no: </div>
+  		<div class="small-right"><%= generator.model_no %> </div>
+  	</div>
+    
+  	<div class="small-row"> 
+  		<div class="small-left"> Alternator no: </div>
+  		<div class="small-right"><%= generator.alternator_no %> </div>
+  	</div>
+
+  	<div class="small-row"> 
+  		<div class="small-left"> Engine no: </div>
+  		<div class="small-right"><%= generator.engine_no %> </div>
+  	</div>
+   
+  	<div class="small-row"> 
+  		<div class="small-left"> Capacity: </div>
+  		<div class="small-right"><%= generator.capacity %>  KVA </div>
+  	</div>
+   
+  	<div class="small-row"> 
+  		<div class="small-left"> Installed date: </div>
+  		<div class="small-right"><%= generator.installed_date %>  </div>
+  	</div>
+
+     
+  	<div class="small-row"> 
+  		<div class="small-left"> Installation team: </div>
+  		<div class="small-right"><%= generator.installation_team %> </div>
+  	</div>
+
+     
+  	<div class="small-row"> 
+  		<div class="small-left"> Comment: </div>
+  		<div class="small-right"><%= generator.comment %> </div>
+  	</div>
+     
+    <div class="small-row"> 
+  		<div class="small-left"> 
+  			<%= link_to "View Servicing history", generator_servicing_histories_path(generator) %> 
+  		</div>
+  	</div>
+  	 
+  	 
+  	<div class="small-row"> 
+  		<%= link_to 'Edit', edit_station_generator_path(@station, generator) %> | 
+  		<%= link_to 'Delete', station_generator_path(@station, generator), :confirm => 'Are you sure?', :method => :delete %>
+  	</div>
+
+ </div>
 
 <% end %>
 
-<p><%= link_to 'Add New Generator', new_station_generator_path(@station) %></p>
+<%= link_to 'Add New Generator', new_station_generator_path(@station) %>
 <script type="text/javascript">
 	activate_tab(5);
 </script>
