@@ -94,6 +94,12 @@ div#container span.title {
 	margin: 5px;
 }
 
+div#tab1 div.title {
+	color: #333333;
+	font-size: 20px;
+	margin: 0 0 20px;
+}
+
 div.row {
    clear: both;
    color:#46596a;
@@ -208,5 +214,15 @@ div.fault-servicing-history {
 	padding: 5px;
 }
 
+select#station_zone {
+	width: 298px;
+}
+
+div.list_pagination {
+	margin-top: 12px;
+}
 a:link{color:#336699;}
 a:link hover{color:#dd7500;}
+
+
+    
