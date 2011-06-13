@@ -1,36 +1,39 @@
 <% @ups.each_with_index do |up, index| %>
-<div class="element">Ups #<%= index + 1 %></div>
-<div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
-	<div class="small-row"> 
-  	<div class="small-left"> Model no: </div>
-  	<div class="small-right"><%= up.model_no %></div>
-  </div>
+<div class="equipment-detail">
+	<div class="element">Ups #<%= index + 1 %></div>
+	<div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
+		<div class="small-row"> 
+  		<div class="small-left"> Model no: </div>
+  		<div class="small-right"><%= up.model_no %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Capacity: </div>
-  	<div class="small-right"><%= up.capacity %> KVA </div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Capacity: </div>
+  		<div class="small-right"><%= up.capacity %> KVA </div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Input AC voltage: </div>
-  	<div class="small-right"><%= up.input_ac_voltage %> Volt</div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Input AC voltage: </div>
+  		<div class="small-right"><%= up.input_ac_voltage %> Volt</div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Installation data: </div>
-  	<div class="small-right"><%= up.installed_date %> </div>
-  </div>
-  <div class="small-row"> 
-  	<div class="small-left"> Comments: </div>
-  	<div class="small-right"><%= up.comment %></div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Installation data: </div>
+  		<div class="small-right"><%= up.installed_date %> </div>
+  	</div>
+  	
+  	<div class="small-row"> 
+  		<div class="small-left"> Comments: </div>
+  		<div class="small-right"><%= up.comment %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<%= link_to 'Edit', edit_station_up_path(@station, up) %> | 
-  	<%= link_to 'Delete', station_up_path(@station, up), :confirm => 'Are you sure?', :method => :delete %>
+  	<div class="small-row" style="margin-bottom: 6px;padding: 5px;"> 
+  		<%= link_to 'Edit', edit_station_up_path(@station, up) %> | 
+  		<%= link_to 'Delete', station_up_path(@station, up), :confirm => 'Are you sure?', :method => :delete %>
+  	</div>
   </div>
-  
 </div>
+
 
 <% end %>
 

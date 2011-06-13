@@ -1,47 +1,52 @@
 <% @rectifiers.each_with_index do |rectifier, index| %>
- <div class="element">Rectifier # <%= index + 1 %> </div>
-<div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
-	<div class="small-row"> 
-  	<div class="small-left"> Model no: </div>
-  	<div class="small-right"><%= rectifier.model_no %></div>
-  </div>
+<div class="equipment-detail">
+	<div class="element">Rectifier # <%= index + 1 %> </div>
+	<div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
+		<div class="small-row"> 
+  		<div class="small-left"> Model no: </div>
+  		<div class="small-right"><%= rectifier.model_no %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Capacity: </div>
-  	<div class="small-right"><%= rectifier.capacity %> KVA </div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Capacity: </div>
+  		<div class="small-right"><%= rectifier.capacity %> KVA </div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Modules no: </div>
-  	<div class="small-right"><%= rectifier.modules_no %></div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Modules no: </div>
+  		<div class="small-right"><%= rectifier.modules_no %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Module capacity: </div>
-  	<div class="small-right"><%= rectifier.module_capacity %></div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Module capacity: </div>
+  		<div class="small-right"><%= rectifier.module_capacity %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Input AC voltage: </div>
-  	<div class="small-right"><%= rectifier.input_ac_voltage %></div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Input AC voltage: </div>
+  		<div class="small-right"><%= rectifier.input_ac_voltage %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Installed date: </div>
-  	<div class="small-right"><%= rectifier.installed_date %></div>
-  </div>
+  	<div class="small-row"> 
+  		<div class="small-left"> Installed date: </div>
+  		<div class="small-right"><%= rectifier.installed_date %></div>
+  	</div>
+  	
+  	<div class="small-row"> 
+  		<div class="small-left"> Installation team: </div>
+  		<div class="small-right"><%= rectifier.installation_team %></div>
+  	</div>
   
-  <div class="small-row"> 
-  	<div class="small-left"> Installation team: </div>
-  	<div class="small-right"><%= rectifier.installation_team %></div>
-  </div>
-  
-  <div class="small-row">
- 		<%= link_to 'Edit', edit_station_rectifier_path(@station, rectifier) %> | 
- 		<%= link_to 'Delete', station_rectifier_path(@station, rectifier), :confirm => 'Are you sure?', :method => :delete %>
- 	</div>
+  	<div class="small-row" style="margin-bottom: 6px;padding: 5px;">
+ 			<%= link_to 'Edit', edit_station_rectifier_path(@station, rectifier) %> | 
+ 			<%= link_to 'Delete', station_rectifier_path(@station, rectifier), :confirm => 'Are you sure?', :method => :delete %>
+ 		</div>
  
+	</div>
+	
 </div>
+
+ 
 
 <% end %>
 

@@ -1,58 +1,59 @@
 <% @acs.each_with_index do |ac, index| %>
-  <div class="element"> Ac # <%= index + 1 %> </div>
-  <div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
-  	<div class="small-row"> 
-  		<div class="small-left"> Type: </div>
-  		<div class="small-right"><%= ac.ac_type %> </div>
-  	</div>
+	<div class="equipment-detail">
+		<div class="element"> Ac # <%= index + 1 %> </div>
+  	<div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
+  		<div class="small-row"> 
+  			<div class="small-left"> Type: </div>
+  			<div class="small-right"><%= ac.ac_type %> </div>
+  		</div>
   
-  	<div class="small-row"> 
-  		<div class="small-left"> Phase: </div>
-  		<div class="small-right"><%= ac.phase %> </div>
-  	</div>
+  		<div class="small-row"> 
+  			<div class="small-left"> Phase: </div>
+  			<div class="small-right"><%= ac.phase %> </div>
+  		</div>
   	
-  	<div class="small-row"> 
-  		<div class="small-left"> Input voltage: </div>
-  		<div class="small-right"><%= ac.input_voltage %> Volt </div>
-  	</div>
+  		<div class="small-row"> 
+  			<div class="small-left"> Input voltage: </div>
+  			<div class="small-right"><%= ac.input_voltage %> Volt </div>
+  		</div>
   	
-  	<div class="small-row"> 
-  		<div class="small-left">  Compressor type: </div>
-  		<div class="small-right"><%= ac.compressor_type %> </div>
-  	</div>
+  		<div class="small-row"> 
+  			<div class="small-left">  Compressor type: </div>
+  			<div class="small-right"><%= ac.compressor_type %> </div>
+  		</div>
   
+    	<div class="small-row"> 
+  			<div class="small-left"> Gas type: </div>
+  			<div class="small-right"><%= ac.gas_type %> </div>
+  		</div>
     	
-  	<div class="small-row"> 
-  		<div class="small-left"> Gas type: </div>
-  		<div class="small-right"><%= ac.gas_type %> </div>
-  	</div>
-    	
-  	<div class="small-row"> 
-  		<div class="small-left"> Installed date: </div>
-  		<div class="small-right"><%= ac.installed_date %> </div>
-  	</div>
-  
+  		<div class="small-row"> 
+  			<div class="small-left"> Installed date: </div>
+  			<div class="small-right"><%= ac.installed_date %> </div>
+  		</div>
+        	
+  		<div class="small-row"> 
+  			<div class="small-left"> Installed date: </div>
+  			<div class="small-right"><%= ac.installed_date %> </div>
+  		</div>
       	
-  	<div class="small-row"> 
-  		<div class="small-left"> Installed date: </div>
-  		<div class="small-right"><%= ac.installed_date %> </div>
-  	</div>
-      	
-  	<div class="small-row"> 
-  		<div class="small-left"> Installation team: </div>
-  		<div class="small-right"><%= ac.installed_team %> </div>
-  	</div>
+  		<div class="small-row"> 
+  			<div class="small-left"> Installation team: </div>
+  			<div class="small-right"><%= ac.installed_team %> </div>
+  		</div>
   
-  	<div class="small-row"> 
-  		<div class="small-left"> <%= link_to "View Fault history", ac_fault_histories_path(ac) %> </div>
-  	</div>
+  		<div class="small-row"> 
+  			<div class="small-left"> <%= link_to "View Fault history", ac_fault_histories_path(ac) %> </div>
+  		</div>
   	 
-    <div class="small-row"> 
-  		<%= link_to 'Edit', edit_station_ac_path(@station, ac) %> | 
- 	<%= link_to 'Delete', station_ac_path(@station, ac), :confirm => 'Are you sure?', :method => :delete %>
- 		</div>
+    	<div class="small-row" style="margin-bottom: 6px;padding: 5px;"> 
+  			<%= link_to 'Edit', edit_station_ac_path(@station, ac) %> | 
+ 				<%= link_to 'Delete', station_ac_path(@station, ac), :confirm => 'Are you sure?', :method => :delete %>
+ 			</div>
   
-  </div>
+  	</div>
+  			
+	</div>
   
 <% end %>
 

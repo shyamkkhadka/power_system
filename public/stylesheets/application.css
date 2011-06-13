@@ -130,7 +130,7 @@ div.element {
 }
 
 div.data-list {
-	margin-bottom: 25px;
+	ma/rgin-bottom: 25px;
 }
 
 div.small-row {
@@ -219,6 +219,9 @@ div#station_list div.heading {
 	 margin-left: 10px;
 }
 
+div#station_list div.heading a{
+	color: #2275A5;
+} 
 div.fault-servicing-history {
 	font-size: 19px;
 	padding: 5px;
@@ -238,6 +241,12 @@ div.big-heading {
     margin: 5px 0 9px -22px;
     text-align: center;
 }
+
+div.equipment-detail {
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 5px;
+}
+
 
 
 
