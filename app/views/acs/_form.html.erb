@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "AC name" %><br />
+   	<%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
     <%= f.label "AC type" %><br />
    	<%= f.select :ac_type, [ "Split", "Window", "Package", "Other"] %>
   </div>
@@ -32,21 +37,21 @@
     <%= f.label :gas_type %><br />
     <%= f.text_field :gas_type %>
   </div>
-  
+
+  <div class="field">
+   <%= f.label "Installed date" %><br />
+   <%= f.date_select :installed_date %>
+  </div>
+  <div class="field">
+    <%= f.label "Installation team" %><br />
+    <%= f.text_field :installed_team %>
+  </div>
+
+    
   <div class="field">
     <%= f.label :comments %><br />
     <%= f.text_area :comments, :class => "small_text" %>
   </div>
-  
-  <div class="field">
-    <%= f.label :installed_team %><br />
-    <%= f.text_field :installed_team %>
-  </div>
-  <div class="field">
-   <%= f.label "Installation date" %><br />
-   <%= f.date_select :installed_date %>
-  </div>
-  
   
   <%= f.hidden_field :station_id, :value => @station.id %>
   <div class="actions">

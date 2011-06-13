@@ -8,7 +8,7 @@ class ServicingHistoriesController < ApplicationController
     #@servicing_histories = ServicingHistory.all
     @generator = Generator.find(params[:generator_id])
     @station = @generator.station
-    @servicing_histories = @generator.servicing_histories.paginate(:page => params[:page], :per_page => 1, :order => "created_at DESC")
+    @servicing_histories = @generator.servicing_histories.paginate(:page => params[:page], :per_page => 1, :order => "servicing_date DESC")
     #render :layout => false 
    respond_to do |format|
    	  format.html # index.html.erb

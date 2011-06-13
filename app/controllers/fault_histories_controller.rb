@@ -8,7 +8,7 @@ class FaultHistoriesController < ApplicationController
     #@fault_histories = FaultHistory.all
     @ac = Ac.find(params[:ac_id])
     @station = @ac.station
-    @fault_histories = @ac.fault_histories.paginate(:page => params[:page], :per_page => 1, :order => "created_at DESC")
+    @fault_histories = @ac.fault_histories.paginate(:page => params[:page], :per_page => 1, :order => "fault_history_date DESC")
     #render :layout => false 
 
     respond_to do |format|

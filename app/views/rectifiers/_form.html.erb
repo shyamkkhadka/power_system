@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :capacity %><br />
-    <%= f.text_field :capacity %> KVA
+    <%= f.text_field :capacity %> A
   </div>
   <div class="field">
     <%= f.label "No of modules" %><br />
@@ -29,16 +29,16 @@
     <%= f.text_field :module_capacity %>
   </div>
   <div class="field">
+    <%= f.label :input_ac_voltage %><br />
+    <%= f.text_field :input_ac_voltage %> Volt
+  </div>
+  <div class="field">
     <%= f.label :installed_date %><br />
     <%= f.date_select :installed_date %>
   </div>
   <div class="field">
     <%= f.label :installation_team %><br />
     <%= f.text_field :installation_team %>
-  </div>
-  <div class="field">
-    <%= f.label :input_ac_voltage %><br />
-    <%= f.text_field :input_ac_voltage %> Volt
   </div>
   <div class="field">
     <%= f.label :comment %><br />

@@ -2,6 +2,11 @@
 	<div class="equipment-detail">
 		<div class="element"> Ac # <%= index + 1 %> </div>
   	<div class="data-list<%= index % 2 == 0 ? '' : ' alternate' %>">
+  	 <div class="small-row"> 
+  			<div class="small-left"> AC name: </div>
+  			<div class="small-right"><%= ac.name %> </div>
+  		</div>
+  
   		<div class="small-row"> 
   			<div class="small-left"> Type: </div>
   			<div class="small-right"><%= ac.ac_type %> </div>
