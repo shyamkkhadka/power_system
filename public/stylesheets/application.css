@@ -150,6 +150,16 @@ div.station_tech_overview div.small-row div.small-left, div.station_geo_overview
    width: 34%;
 }
 
+div#station_list div.station {
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 5px;
+}
+
+div#station_list div.station:hover {
+	background-color: #EDE6E6;
+}
+
+
 div.small-row div.small-right {
 	  display: inline-block;
     padding: 3px 8px;
@@ -177,8 +187,7 @@ div.pagination .next_page {
 }
 
 div.no_tab_container {
-	
-    padding: 10px;
+	padding: 10px;
 }
 
 div.no_tab_container {
@@ -187,7 +196,7 @@ div.no_tab_container {
 	-webkit-border-radius:10px;
 	-khtml-border-radius: 10px;
 	border-radius:10px;
-		background-color:#f6f6f6;
+	background-color:#f6f6f6;
 }
 
 div#station_list div.station_tech_overview {
@@ -222,8 +231,14 @@ select#station_zone {
 div.list_pagination {
 	margin-top: 12px;
 }
-a:link{color:#336699;}
-a:link hover{color:#dd7500;}
+
+div.big-heading {
+    color: #46596A;
+    font: 26px Arial,Tahoma,Helvetica;
+    margin: 5px 0 9px -22px;
+    text-align: center;
+}
+
 
 
     

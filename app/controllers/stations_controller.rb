@@ -5,7 +5,7 @@ class StationsController < ApplicationController
   # GET /stations
   # GET /stations.xml
   def index
-  	@stations = Station.paginate(:page => params[:page], :per_page => 2, :order => "created_at DESC")
+  	@stations = Station.paginate(:page => params[:page], :per_page => 5, :order => "created_at DESC")
     @station = Station.new
     respond_to do |format|
       format.html # index.html.erb
