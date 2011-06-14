@@ -96,14 +96,15 @@ class StationsController < ApplicationController
   # GET /stations/search
   # Displays search suggestions for stations 
   def search
-   search_term = "%".concat(params[:term].concat("%"))
 
-  	stations = Station.find(:all, :conditions => ["name like ?",search_term])
+   #search_term = "%".concat(params[:term].concat("%"))
+
+  	#stations = Station.find(:all, :conditions => ["name like ?",search_term])
   	#station_names = stations.collect{ |s| s.name }
-  	station_names = Station.all.collect{ |s| s.name }
-  	puts "name #{station_names.inspect}"
-  	respond_to do |format|
-  		format.json { render :json => stations.to_json }
-  	end
+  	#station_names = Station.all.collect{ |s| s.name }
+  	#puts "name #{station_names.inspect}"
+  	#respond_to do |format|
+  		#format.json { render :json => stations.to_json }
+  	#end
   end
 end

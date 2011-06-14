@@ -10,7 +10,7 @@ PowerSystem::Application.routes.draw do
 		resources :batteries, :rectifiers, :ups, :generators, :acs
 		post :search_result, :on => :collection
 		get :autocomplete_station_name, :on => :collection
-		get :search, :on => :collection
+		get :search, :on => :collection, :as => 'autocomplete'
   end
   
  	resources :generators do

@@ -53,6 +53,15 @@ class ServicingHistoriesController < ApplicationController
   # POST /servicing_histories.xml
   def create
     @servicing_history = ServicingHistory.new(params[:servicing_history])
+    
+    # Change part nos to array, to be stored
+    new_parts = CGI::unescape(params[:servicing_history][:changed_part_no]).split(",").map { |no| CGI::unescape(no) }
+    @servicing_history.changed_part_no = new_parts
+    
+    # Change quantity to array
+    new_quantities = CGI::unescape(params[:servicing_history][:changed_part_quantity]).split(",").map { |no| CGI::unescape(no) }
+    @servicing_history.changed_part_quantity = new_quantities
+    
     @generator = Generator.find(params[:generator_id])
     @station = @generator.station
 

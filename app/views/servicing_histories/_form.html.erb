@@ -1,4 +1,4 @@
-<%= form_for([@generator, @servicing_history]) do |f| %>
+<%= form_for ([@generator, @servicing_history]), :html => { :onsubmit => "return checkParts(this)" } do |f| %>
   <% if @servicing_history.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@servicing_history.errors.count, "error") %> prohibited this servicing_history from being saved:</h2>
@@ -23,14 +23,19 @@
     <%= f.label :servicing_type %><br />
     <%= f.text_field :servicing_type %>
   </div>
-  <div class="field">
-    <%= f.label :changed_part_no %><br />
-    <%= f.text_field :changed_part_no %>
+  
+  <div id="servicing_changed_quantity" class="field">
+    <%= f.hidden_field :changed_part_no, :value => "Changed part no" %>   
+    <%= f.hidden_field :changed_part_quantity, :value => "Changed part quantity" %>
+    <div>
+    	<input class="changed_part_no" type="text" value ="Changed part no"/>
+    	<input class="changed_part_quantity" type="text" value ="Changed part quantity"/>
+    	 <span id = "add_new_servicing_detail"> + Add New </span>
+    </div>
+    
+
   </div>
-  <div class="field">
-    <%= f.label :changed_part_quantity %><br />
-    <%= f.text_field :changed_part_quantity %>
-  </div>
+
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description, :class => "small_text" %>

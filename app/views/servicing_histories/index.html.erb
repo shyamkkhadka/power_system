@@ -19,23 +19,29 @@
 				<div class="small-right"> <%=  srv_history.servicing_type %> </div>
 			</div>
 
-			<div class="small-row">
-				<div class="small-left"> Changed part no : </div>
-				<div class="small-right"> <%= srv_history.changed_part_no %> </div>
+		
+			<div class="changed_parts">
+				<div class="small-row">
+					<div class="small-left" style="border-bottom:1px solid;color:#336699;"> Changed part no </div>
+					<div class="small-right" style="border-bottom:1px solid;color:#336699;"> Changed part quantity </div>
+				</div>
+			
+				<% srv_history.changed_part_no.each_with_index do |no, index| %>
+					<div class="small-row">
+						<div class="small-left"> <%= no %> </div>
+						<div class="small-right"> <%= srv_history.changed_part_quantity[index.to_i] %> </div>
+					</div>
+				<% end %>
 			</div>
-
-			<div class="small-row">
-				<div class="small-left"> Changed part quantity : </div>
-				<div class="small-right"> <%= srv_history.changed_part_quantity %> </div>
-			</div>
-
+			
+		
 			<div class="small-row">
 				<div class="small-left"> Description : </div>
 				<div class="small-right"> <%= srv_history.description %> </div>
 			</div>
 
 		 <p> <%= link_to "Delete", generator_servicing_history_path(@generator, srv_history), :confirm => 'Are you sure?', :method => :delete %> </p>
-		 
+		
 		<% end %>
 	<% end %>
    

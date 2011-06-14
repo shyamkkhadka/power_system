@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613082021) do
+ActiveRecord::Schema.define(:version => 20110614061313) do
 
   create_table "acs", :force => true do |t|
     t.string    "ac_type"
@@ -79,15 +79,15 @@ ActiveRecord::Schema.define(:version => 20110613082021) do
   end
 
   create_table "servicing_histories", :force => true do |t|
-    t.date      "servicing_date"
-    t.string    "hour_meter_reading"
-    t.string    "servicing_type"
-    t.string    "changed_part_no"
-    t.integer   "changed_part_quantity"
-    t.text      "description"
-    t.integer   "generator_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.date     "servicing_date"
+    t.string   "hour_meter_reading"
+    t.string   "servicing_type"
+    t.text     "changed_part_no",       :limit => 2000
+    t.text     "changed_part_quantity"
+    t.text     "description"
+    t.integer  "generator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "stations", :force => true do |t|
