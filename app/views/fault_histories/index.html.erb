@@ -1,12 +1,11 @@
 <div class="fault-servicing-history">
 	Fault history of AC </b>, installed in <span style="color:#336699"><%= @station.name %> <%= @station.account_office %> </span> 
 </div>
-
 <% if !@ac.fault_histories.last.nil? %>
 		<% @fault_histories.each do |fault_history| %>
 			<div class="small-row">
 				<div class="small-left"> Fault on   </div>
-				<div class="small-right"> <%= fault_history_date.created_at %> </div>
+				<div class="small-right"> <%= fault_history.created_at %> </div>
 			</div>
 
 			<div class="small-row">

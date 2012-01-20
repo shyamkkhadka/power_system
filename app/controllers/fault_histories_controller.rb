@@ -33,6 +33,7 @@ class FaultHistoriesController < ApplicationController
   def new
     @fault_history = FaultHistory.new
     @ac = Ac.find(params[:ac_id])
+    puts "######ID #{@ac.id}"
     @station = @ac.station
     
     respond_to do |format|
@@ -49,8 +50,8 @@ class FaultHistoriesController < ApplicationController
   # POST /fault_histories
   # POST /fault_histories.xml
   def create
-    @fault_history = FaultHistory.new(params[:fault_history])
-    @ac = Ac.find(params[:ac_id])
+   	@ac = Ac.find(params[:ac_id])
+    @fault_history = @ac.fault_histories.build(params[:fault_history])
     @station = @ac.station
 
     respond_to do |format|
