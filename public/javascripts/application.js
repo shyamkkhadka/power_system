@@ -91,7 +91,6 @@ function checkParts() {
 	});
 	$("#servicing_history_changed_part_quantity").val(encodeURIComponent(part_quantities));
 	var val = $("#servicing_history_changed_part_quantity").val();
-	console.log("Quantity "+val);
 	return true;
 }
 	
