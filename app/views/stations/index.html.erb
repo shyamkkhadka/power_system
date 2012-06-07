@@ -2,77 +2,39 @@
   autocomplete_field_tag 'name', '', autocomplete_station_name_stations_path, :size => 75
 end
 %>
-
 <div id="station_list" class="no_tab_container">
 	<div class="big-heading">Power stations under ERD </div>
 
-	
-	<% @stations.each do |station| %>
-		<div class="station">
-			<div class="heading"> <%= link_to station.name, station_path(station) %> </div>
-			<div class="station_tech_overview" >
-				<div class="small-row"> 
-  				<div class="small-left">  No.of batteries : </div>
-  				<div class="small-right"><%= station.batteries.count %> </div>
-  			</div>
-  		
-  			<div class="small-row"> 
-  				<div class="small-left">  No.of rectifiers : </div>
-  				<div class="small-right"><%= station.rectifiers.count %> </div>
-  			</div>
+	<div style="height:35px">
+		<span style="float:right">Account Office
+			<select id = "group_stations">
+				<option>All</option>	
+		  		<option>Bhadrapur</option>	
+		  		<option>Biratnagar</option>	
+		  		<option>Birtamod</option>
+			  	<option>Damak</option>
+		  		<option>Dharan</option>
+		  		<option>Dhankuta</option>
+				<option>Ilam</option>
+				<option>Itahari</option>
+		  		<option>Lahan</option>
+		  		<option>Rajbiraj</option>
+			</select>	
+		</span>
+	</div>
 
-				<div class="small-row"> 
-  				<div class="small-left">  No.of ups : </div>
-  				<div class="small-right"><%= station.ups.count %> </div>
-  			</div>
-			
-				<div class="small-row"> 
-  				<div class="small-left">  No.of generators : </div>
-  				<div class="small-right"><%= station.generators.count %> </div>
-  			</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#stations").load("/stations/list");
+		});
 
-				<div class="small-row"> 
-  				<div class="small-left">  No.of acs : </div>
-  				<div class="small-right"><%= station.acs.count %> </div>
-  			</div>
-			</div>
-		
-			<div class="station_geo_overview">
-				<div class="small-row"> 
-					<div class="small-left"> Zone : </div>
-  				<div class="small-right"><%= station.zone %> </div>
-				</div>
-		
-				<div class="small-row"> 
-					<div class="small-left"> District : </div>
-  				<div class="small-right"><%= station.district %> </div>
-				</div>
-		
-				<div class="small-row"> 
-					<div class="small-left"> Account office : </div>
-  				<div class="small-right"><%= station.account_office %> </div>
-				</div>
-			
-				<div class="small-row"> 
-					<div class="small-left"> Maintenance office : </div>
-  				<div class="small-right"><%= station.maintenance_office %> </div>
-				</div>
-			
-				<div class="small-row"> 
-					<div class="small-left"> Station Type : </div>
-  				<div class="small-right"><%= station.type %> </div>
-				</div>
-			</div>
+	</script>	
 	
-		<div style="margin: 0 0 5px 15px;">
-			<%= link_to 'Edit', edit_station_path(station) %> | 
-			<%= link_to 'Delete', station, :confirm => 'Are you sure?', :method => :delete %>
-		</div>		
-			
-		</div>
+	<div id = "stations">
+		<!-- Load stations list here -->
 		
-	<% end %>
-	
-		<%= will_paginate @stations, :param_name => "page", :page_links => true,  :previous_label => " << Previous " , :next_label => "Next >> " , :class => "list_pagination"%>
+	</div>
+
 </div>
 

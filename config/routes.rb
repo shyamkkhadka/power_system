@@ -11,23 +11,25 @@ PowerSystem::Application.routes.draw do
 		post :search_result, :on => :collection
 		get :autocomplete_station_name, :on => :collection
 		get :search, :on => :collection, :as => 'autocomplete'
+		get :list, :on => :collection
   end
   
- 	resources :generators do
+  resources :generators do
 		resources :servicing_histories
   end
 	
-	resources :batteries
+  resources :batteries
   resources :rectifiers
-	resources :ups
+  resources :ups
 
 
 	#devise_for :users, :path => "users", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
 	
-	devise_for :users, :controllers => { :sessions => "sessions" }
+  devise_for :users, :controllers => { :sessions => "sessions" }
 
+  resources :stations do
 	
-
+  end
 
 	#get :autocomplete_station_name, :on => :collection
 

@@ -1,0 +1,11 @@
+<script type="text/javascript" src="/javascripts/jquery.fancybox-1.3.4.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/jquery.fancybox-1.3.4.css" media="screen" />
+<h2>Provide new servicing details of <%= @generator.genset_name %> generator </h2>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', station_generator_path(@station, @generator) %>
+
+<script type="text/javascript">
+	activate_tab(5);
+</script>

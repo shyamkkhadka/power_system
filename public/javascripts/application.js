@@ -8,8 +8,9 @@ function activate_tab(tab_index) {
 }
 
 // Required for pagination showing servicing histories of generator
-function formatLinkForPaginationURL(eqp) {
-  $("div.pagination").find("a").each(function() {
+function formatLinkForPaginationURL() {
+  console.log("Called");
+  $("div.list_pagination").find("a").each(function() {
         var linkElement = $( this );
         var paginationURL = linkElement.attr("href");
         linkElement.attr({
@@ -18,7 +19,8 @@ function formatLinkForPaginationURL(eqp) {
         });
 		
         linkElement.click(function() {
-        			eqp == "generator" ? $("#servicing_history_feed").load( $(this).attr('url') ) : $("#fault_history_feed").load( $(this).attr('url') )
+        		//eqp == "generator" ? $("#servicing_history_feed").load( $(this).attr('url') ) : $("#fault_history_feed").load( $(this).attr('url') );
+			$("#stations").load( $(this).attr('url') );
            		return false;
         });			
    });
@@ -56,6 +58,12 @@ $(document).ready(function() {
 		'<span class="delete_servicing_quantity">Delete</span></div>');
 	});
 	
+	
+	// Event handler for grouping by account office
+	$("#group_stations").change(function() {
+		var acct_office = $(this +"option:selected").val().toUpperCase();
+                $("#stations").load("/stations/list?group_by="+acct_office);
+	});	
 		
 });
 

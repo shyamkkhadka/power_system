@@ -1,0 +1,40 @@
+<div id="side_bar">
+		<span class="title"> <%= link_to "Add New Station", new_station_path %> </span>
+		<div class="block">
+			<div style="margin: 0 0 2px 8px;"><%= link_to "ERD Power Stations Overview", stations_url %></div>
+
+			<div class="row">
+				<div class="left"> Total power stations  </div>
+				<div class="right"> <%= Station.count %></div>
+			</div>
+			<div class="row">
+				<div class="left"> Total No. of batteries </div>
+				<div class="right"> <%= Battery.count %> </div>
+			</div>
+			<div class="row">
+				<div class="left"> Total No. of rectifiers </div>
+				<div class="right"> <%= Rectifier.count %> </div>
+			</div>
+			<div class="row">
+				<div class="left"> Total No. of UPS </div>
+				<div class="right"> <%= Up.count %> </div>
+			</div>
+			<div class="row">
+				<div class="left"> Total No. of generators </div>
+				<div class="right"> <%= Generator.count %> </div>
+			</div>
+			<div class="row">
+				<div class="left"> Total No. of ACs </div>
+				<div class="right"> <%= Ac.count %> </div>
+			</div>
+		</div>
+				
+		<div class="block">
+			<div class="content"><u> Servicing instructions </u></div>
+			<div class="content"> Instructions goes here..</div>
+			<div class="content"> Instructions goes here..</div>
+			<div class="content"> Instructions goes here..</div>
+		</div>
+		
+	</div>
+

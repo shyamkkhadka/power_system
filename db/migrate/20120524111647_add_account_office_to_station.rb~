@@ -1,0 +1,9 @@
+class AddAccountOfficeToStation < ActiveRecord::Migration
+  def self.up
+	add_column :stations, :account_office, :string
+  end
+
+  def self.down
+	remove_column :stations, :account_office, :string
+  end
+end

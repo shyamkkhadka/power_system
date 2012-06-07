@@ -1,0 +1,24 @@
+<div id="header">
+	<div id="header_left">
+		<img src="/images/ntc_logo.png" alt="Nepal Telecom"/>
+	</div>
+	<div id="header_right">
+		<h1> Power Section Inventory Management System  </h1>
+		<h2> Eastern Regional Directorate, Biratnagar </h2>
+	</div>
+	
+	<% if  user_signed_in? %>
+	<div align="right">
+		<div class="welcome">Hi <%= current_user.email %> | <%= link_to "Sign out", destroy_user_session_path,  :class => "sign_out" %> </div>
+		<% end %>
+		</div>	
+  </div>
+</div>
+
+<div id="formsearch">
+	<form id="searchform">
+			<input type="text" value="Search stations..." name="s" id="s" onfocus="if (this.value == 'Search stations...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search stations...';}"/>
+	</form>
+</div>
+
+
